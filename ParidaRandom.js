@@ -21,9 +21,11 @@ const actualitzarInfo = () =>
     numeroIntroduit.textContent = "Has intentat el " + input;
 }
 
-const comprovarNum = () =>
+const comprovarNum = (introduit) =>
 {
     let input = document.querySelector("#nom input").value;
+
+    if (introduit) input = introduit;
 
     let correcte = true;
 
@@ -133,4 +135,13 @@ window.onkeydown = (event) => {
             action();
             break;
     }
+}
+
+for (let i = 0; i < marcats.length; i++)
+{
+    marcats[i].addEventListener('mousedown', (event) => {
+        if (event.button === 0) {
+            comprovarNum(i+1)
+        }
+    });
 }
