@@ -13,10 +13,8 @@ const nouNum = () =>
     num = Math.floor(Math.random() * 100 + 1);
 }
 
-const actualitzarInfo = () =>
+const actualitzarInfo = (input) =>
 {
-    let input = document.querySelector("#nom input").value;
-
     intents.textContent = "Duus: " + ++numintents + " intents";
     numeroIntroduit.textContent = "Has intentat el " + input;
 }
@@ -46,14 +44,14 @@ const comprovarNum = (introduit) =>
         case input > num:
         {
             message.textContent = "↓ Ha de ser més petit ↓";
-            actualitzarInfo();
+            actualitzarInfo(input);
             endevinat = false;
             break;
         }
         case input < num:
         {
             message.textContent = "↑ Ha de ser més gran ↑";
-            actualitzarInfo();
+            actualitzarInfo(input);
             endevinat = false;
             break;
         }
@@ -61,7 +59,7 @@ const comprovarNum = (introduit) =>
         {
             message.textContent = "Has encertat! Era " + num;
             canviarColor("#3d33ff");
-            actualitzarInfo();
+            actualitzarInfo(input);
             endevinat = true;
             break;
         }
@@ -101,7 +99,7 @@ const canviarColor = (color) =>
     message.style.backgroundColor = color;
 }
 
-const action = () =>
+const action = (a) =>
 {
     if (endevinat)
     {
@@ -110,7 +108,9 @@ const action = () =>
     }
     else
     {
-        comprovarNum()
+        if(a) comprovarNum(a)
+        else comprovarNum();
+
     }
     document.querySelector("input[type='number']").focus();
 }
@@ -141,7 +141,7 @@ for (let i = 0; i < marcats.length; i++)
 {
     marcats[i].addEventListener('mousedown', (event) => {
         if (event.button === 0) {
-            comprovarNum(i+1)
+            action(i+1)
         }
     });
 }
