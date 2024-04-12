@@ -105,14 +105,21 @@ const action = (a) =>
     {
         nouNum();
         reset();
+        document.querySelector("input[type='number']").focus();
     }
     else
     {
-        if(a) comprovarNum(a)
-        else comprovarNum();
+        if(a)
+        {
+            comprovarNum(a)
+        }
+        else
+        {
+            comprovarNum();
+            document.querySelector("input[type='number']").focus();
+        }
 
     }
-    document.querySelector("input[type='number']").focus();
 }
 
 const reset = () =>
