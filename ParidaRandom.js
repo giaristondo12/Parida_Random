@@ -99,6 +99,23 @@ const canviarColor = (color) =>
     message.style.backgroundColor = color;
 }
 
+const goZonaJoc = () =>
+{
+    let menu = document.getElementById("menu");
+    let zonaJoc = document.getElementById("zonaJoc");
+
+    menu.style.display = "none";
+    zonaJoc.style.display = "flex";
+}
+const goMenu = () =>
+{
+    let menu = document.getElementById("menu");
+    let zonaJoc = document.getElementById("zonaJoc");
+
+    menu.style.display = "flex";
+    zonaJoc.style.display = "none";
+}
+
 const action = (a) =>
 {
     if (endevinat)

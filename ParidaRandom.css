@@ -5,13 +5,57 @@
 
 body {
     font-family: lletra, sans-serif;
+    background: #ffefc3;
+    margin: 0;
+    padding: 0;
+}
+
+#zonaJoc {
     justify-content: center;
     align-items: center;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     height: 100vh;
-    background: #ffefc3;
 }
+
+#menu {
+    display: flex;
+    height: 100vh;
+    background: #93b247;
+}
+
+#contingutMenu {
+    width: 1000px;
+    height: 600px;
+    background-color: #c7a76c;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #0004;
+    flex-direction: column;
+
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+titol {
+    font-size: 90pt;
+    color: #ffefc3;
+    -webkit-text-stroke: 4px #776b57;
+    background-color: #a28459;
+
+    margin-top: 26px;
+    width: 950px;
+    height: 300px;
+    border-radius: 30px;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
 
 #container {
     width: 800px;
@@ -81,16 +125,32 @@ input {
 
 }
 
+#botoGoMenu {
+    font-size: 20px;
+}
+
+#botoGoZonaJoc {
+    font-size: 60px;
+    margin-top: 100px;
+    height: 100px;
+    width: 300px;
+    border-radius: 17px;
+    padding-top: 27px;
+}
+
+#botoSubmit {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
 button {
     background-color: #ce5600;
     color: #fcae6e;
-    margin-top: 20px;
     padding: 15px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-weight: lighter;
-    font-size: 20px;
     font-family: lletra, sans-serif;
 }
 
