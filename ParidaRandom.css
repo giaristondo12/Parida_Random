@@ -1,0 +1,175 @@
+@font-face {
+    src: url("LuckiestGuy-Regular.ttf");
+    font-family: lletra;
+}
+
+body {
+    font-family: lletra, sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    background: #ffefc3;
+}
+
+#container {
+    width: 800px;
+    background-color: #c7a76c;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #0004;
+    flex-direction: column;
+
+    margin: auto;
+}
+
+missatge {
+    height: 300px;
+    color: #fff4d0;
+    background-color: #93b247;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: 6px solid #888;
+    border-radius: 15px;
+
+    font-size: 50pt;
+}
+
+label {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    text-align: center;
+    font-size: 20pt;
+}
+
+texte {
+    margin-bottom: 5px;
+}
+
+input {
+    background-color: #5d3317;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+
+    text-align: center;
+    padding: 5px 10px;
+
+    width: 300px;
+    height: 60px;
+    font-size: 30pt;
+}
+
+#nom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+#boto {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+button {
+    background-color: #ce5600;
+    color: #fcae6e;
+    margin-top: 20px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: lighter;
+    font-size: 20px;
+    font-family: lletra, sans-serif;
+}
+
+button:hover {
+    background-color: #e16200;
+}
+
+intents, numero_introduit {
+    background-color: #eccd6c;
+    color: #842;
+    height: 70px;
+    border-radius: 10px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+numero_introduit {
+    font-size: 17pt;
+    width: 350px;
+}
+
+intents {
+    width: 250px;
+    font-size: 20pt;
+}
+
+#info {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    margin: 20px auto;
+}
+
+#contenidorMarcats {
+    margin: auto;
+    background-color: #c7a76c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#marcador {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    grid-auto-flow: row;
+    margin: auto;
+}
+
+.marcats {
+    font-size: 11pt;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #a28459;
+    border-radius: 50%;
+    padding: 9px 5px 5px 5px;
+    margin: 1px;
+    color: #524c42;
+}
+
+#infoProvats {
+    background-color: #dcb470;
+    color: #674e3e;
+    width: 300px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+}
