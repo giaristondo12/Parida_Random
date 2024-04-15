@@ -4,13 +4,33 @@ let color = message.style.backgroundColor;
 let endevinat;
 let intents = document.querySelector("intents");
 let numeroIntroduit = document.querySelector("numero_introduit");
-let marcats = document.querySelectorAll(".marcats");
+let marcats = document.querySelectorAll("#marcador > div");
 
 let numintents = 0;
 
-const nouNum = () =>
+const inici = () =>
 {
-    num = Math.floor(Math.random() * 100 + 1);
+    nouNum(100);
+    generarTaulell(100);
+}
+
+const generarTaulell = (caselles) => {
+    let marcador = document.querySelector("#marcador");
+    marcador.innerHTML = "";
+    for (let cas = 1; cas <= caselles; cas++) {
+        const casella = document.createElement("div");
+        casella.classList.add("marcats");
+        let numero = cas;
+        casella.textContent = numero;
+        marcador.appendChild(casella);
+        casella.addEventListener("click", (event) => { action(cas) });
+    }
+    marcats = document.querySelectorAll("#marcador > div");
+}
+
+const nouNum = (max) =>
+{
+    num = Math.floor(Math.random() * max + 1);
 }
 
 const actualitzarInfo = (input) =>
@@ -114,13 +134,14 @@ const goMenu = () =>
 
     menu.style.display = "flex";
     zonaJoc.style.display = "none";
+    reset();
 }
 
 const action = (a) =>
 {
     if (endevinat)
     {
-        nouNum();
+        nouNum(100);
         reset();
         document.querySelector("input[type='number']").focus();
     }
@@ -151,6 +172,8 @@ const reset = () =>
         marcats.style.backgroundColor = "#a28459";
         marcats.style.color = "#524c42";
     })
+    numeroIntroduit.style.backgroundColor = "#eccd6c";
+    numeroIntroduit.style.color = "#842";
 }
 
 window.onkeydown = (event) => {
@@ -159,13 +182,4 @@ window.onkeydown = (event) => {
             action();
             break;
     }
-}
-
-for (let i = 0; i < marcats.length; i++)
-{
-    marcats[i].addEventListener('mousedown', (event) => {
-        if (event.button === 0) {
-            action(i+1)
-        }
-    });
 }
