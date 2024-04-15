@@ -6,6 +6,11 @@ let intents = document.querySelector("intents");
 let numeroIntroduit = document.querySelector("numero_introduit");
 let marcats = document.querySelectorAll("#marcador > div");
 
+let menu = document.getElementById("menu");
+let zonaJoc = document.getElementById("zonaJoc");
+let menuDif = document.getElementById("menuDificultats");
+
+
 let numintents = 0;
 
 const inici = () =>
@@ -121,18 +126,22 @@ const canviarColor = (color) =>
 
 const goZonaJoc = () =>
 {
-    let menu = document.getElementById("menu");
-    let zonaJoc = document.getElementById("zonaJoc");
-
     menu.style.display = "none";
+    menuDif.style.display = "none";
     zonaJoc.style.display = "flex";
 }
+
+const goMenuDif = () =>
+{
+    menuDif.style.display = "flex";
+    menu.style.display = "none";
+    zonaJoc.style.display = "none";
+}
+
 const goMenu = () =>
 {
-    let menu = document.getElementById("menu");
-    let zonaJoc = document.getElementById("zonaJoc");
-
     menu.style.display = "flex";
+    menuDif.style.display = "none";
     zonaJoc.style.display = "none";
     reset();
 }

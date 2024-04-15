@@ -38,6 +38,26 @@ body {
     flex-direction: column;
 }
 
+#menuDificultats {
+    display: none;
+    height: 100vh;
+    background: #bb7942;
+}
+
+#contingutDificultats {
+    width: 1000px;
+    height: 600px;
+    background-color: #c7a76c;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #0004;
+
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 titol {
     font-size: 90pt;
     color: #ffefc3;
