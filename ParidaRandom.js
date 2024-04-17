@@ -132,7 +132,7 @@ const comprovarNum = (introduit) =>
 
             casellaClicada.style.backgroundColor = colorMajorMenor;
             if (phoneModeOnOff) {
-                let fons = document.getElementById("zonaJoc");
+                let fons = document.querySelector("body");
                 fons.style.backgroundColor = colorMessage;
             }
         }
@@ -142,7 +142,7 @@ const comprovarNum = (introduit) =>
             casellaClicada.style.color = "#ffe1c2";
 
             if (phoneModeOnOff) {
-                let fons = document.getElementById("zonaJoc");
+                let fons = document.querySelector("body");
                 fons.style.backgroundColor = "#ff7c68";
             }
         }
@@ -241,7 +241,7 @@ const reset = () =>
     })
     numeroIntroduit.style.backgroundColor = "#eccd6c";
     numeroIntroduit.style.color = "#842";
-    document.getElementById("zonaJoc").style.backgroundColor = "#ffefc3";
+    document.querySelector("body").style.backgroundColor = "#ffefc3";
 }
 
 window.onkeydown = (event) => {
@@ -324,6 +324,8 @@ const phoneMode = () =>
     {
         phoneModeOnOff = false;
 
+        document.querySelector("body").style.backgroundColor = "#ffefc3";
+
         container.style.display = "unset";
 
         marcador.style.gridTemplateColumns = "repeat(" + columns + ", 30px)";
@@ -335,3 +337,4 @@ const phoneMode = () =>
     }
 }
 
+/* a */
