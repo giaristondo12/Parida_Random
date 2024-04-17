@@ -5,6 +5,9 @@ let endevinat;
 let intents = document.querySelector("intents");
 let numeroIntroduit = document.querySelector("numero_introduit");
 let marcats = document.querySelectorAll("#marcador > div");
+let rows;
+let columns;
+let phoneModeOnOff;
 
 let menu = document.getElementById("menu");
 let zonaJoc = document.getElementById("zonaJoc");
@@ -16,6 +19,9 @@ let numintents = 0;
 
 const botoDificultat = (files, columnes) =>
 {
+    rows = files;
+    columns = columnes;
+
     let texte = document.querySelector("texte");
 
     totalCaselles = files * columnes;
@@ -102,6 +108,8 @@ const comprovarNum = (introduit) =>
         }
     }
 
+    let casellaClicada = document.querySelector(".marcats:nth-of-type(" + (input) + ")");
+
     if (correcte)
     {
 
@@ -121,12 +129,22 @@ const comprovarNum = (introduit) =>
             }
             canviarColor(colorMessage);
             setTimeout(function() { canviarColor(color) }, 750);
-            document.querySelector(".marcats:nth-of-type(" + (input) + ")").style.backgroundColor = colorMajorMenor;
+
+            casellaClicada.style.backgroundColor = colorMajorMenor;
+            if (phoneModeOnOff) {
+                let fons = document.getElementById("zonaJoc");
+                fons.style.backgroundColor = colorMessage;
+            }
         }
         else
         {
-            document.querySelector(".marcats:nth-of-type(" + (input) + ")").style.backgroundColor = "#f33a1e";
-            document.querySelector(".marcats:nth-of-type(" + (input) + ")").style.color = "#ffe1c2";
+            casellaClicada.style.backgroundColor = "#f33a1e";
+            casellaClicada.style.color = "#ffe1c2";
+
+            if (phoneModeOnOff) {
+                let fons = document.getElementById("zonaJoc");
+                fons.style.backgroundColor = "#ff7c68";
+            }
         }
     }
     else
@@ -168,11 +186,14 @@ const goMenu = () =>
 const setCSS = (files, columnes) =>
 {
     let marcador = document.getElementById("marcador");
+    let infoProvats = document.getElementById("infoProvats");
 
     marcador.style.gridTemplateColumns = "repeat(" + columnes + ", 30px)";
     marcador.style.gridTemplateRows = "repeat(" + files + ", 30px)";
     marcador.style.width = columnes / 10 * 300 + "px";
     marcador.style.height = files / 10 * 300 + "px";
+
+    infoProvats.style.width = 300 * columnes / 10 + "px";
 }
 
 const action = (a) =>
@@ -220,6 +241,7 @@ const reset = () =>
     })
     numeroIntroduit.style.backgroundColor = "#eccd6c";
     numeroIntroduit.style.color = "#842";
+    document.getElementById("zonaJoc").style.backgroundColor = "#ffefc3";
 }
 
 window.onkeydown = (event) => {
@@ -265,3 +287,51 @@ const amagarInput = () =>
     botons.style.display = "unset";
     inputs.style.display = "none";
 }
+
+const phoneMode = () =>
+{
+    let container = document.getElementById("container");
+    let marcador = document.getElementById("marcador");
+    let infoProvats = document.getElementById("infoProvats");
+
+    if (container.style.display !== "none")
+    {
+        phoneModeOnOff = true;
+
+        container.style.display = "none";
+
+        if (columns < 25)
+        {
+            marcador.style.gridTemplateColumns = "repeat(" + columns + ", 40px)";
+            marcador.style.gridTemplateRows = "repeat(" + rows + ", 40px)";
+            marcador.style.width = columns / 10 * 400 + "px";
+            marcador.style.height = rows / 10 * 400 + "px";
+
+            infoProvats.style.width = 400 * columns / 10 + "px";
+        }
+
+        if (columns < 16)
+        {
+            marcador.style.gridTemplateColumns = "repeat(" + columns + ", 60px)";
+            marcador.style.gridTemplateRows = "repeat(" + rows + ", 60px)";
+            marcador.style.width = columns / 10 * 600 + "px";
+            marcador.style.height = rows / 10 * 600 + "px";
+
+            infoProvats.style.width = 600 * columns / 10 + "px";
+        }
+    }
+    else
+    {
+        phoneModeOnOff = false;
+
+        container.style.display = "unset";
+
+        marcador.style.gridTemplateColumns = "repeat(" + columns + ", 30px)";
+        marcador.style.gridTemplateRows = "repeat(" + rows + ", 30px)";
+        marcador.style.width = columns / 10 * 300 + "px";
+        marcador.style.height = rows / 10 * 300 + "px";
+
+        infoProvats.style.width = 300 * columns / 10 + "px";
+    }
+}
+
