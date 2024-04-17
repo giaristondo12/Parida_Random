@@ -14,7 +14,9 @@
 <body>
 <div id="menu">
     <div id="contingutMenu">
-        <titol>Parida Random</titol>
+        <titol>
+            <a>Parida</a><a>Random</a>
+        </titol>
         <button id="botoGoZonaJoc" onclick="goMenuDif()">Jugar</button>
     </div>
 </div>
@@ -32,8 +34,8 @@
             <input id="inputFiles" class="inputDificultat" type="number" placeholder="Files" autofocus/>
             <input id="inputColumnes" class="inputDificultat" type="number" placeholder="Columnes" autofocus/>
             <br/>
-            <button class="botoDificultat" onclick="amagarInput()">Enrere</button>
-            <button class="botoDificultat" onclick="seleccionarDif()">Seleccionar</button>
+            <button class="botoDificultatAltres" onclick="amagarInput()">Enrere</button>
+            <button class="botoDificultatAltres" onclick="seleccionarDif()">Seleccionar</button>
         </div>
         <div>
             <button id="botoMenuDificultat" class="botoGoMenu" onclick="goMenu()">Menu</button>
@@ -60,8 +62,13 @@
         </div>
     </div>
     <div id="contenidorMarcats">
-        <div id="infoProvats">Has provat:</div>
+        <div id="infoProvats">
+            <texteInfoProvats>Has provat:</texteInfoProvats>
+        </div>
         <div id="marcador">
+        </div>
+        <div>
+            <button id="phoneMode" onclick="phoneMode()">Phone</button>
         </div>
     </div>
 </div>
