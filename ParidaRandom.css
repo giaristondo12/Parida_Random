@@ -122,8 +122,6 @@ a {
     display: none;
     flex-wrap: wrap;
     height: 100vh;
-
-    background-color: #ffefc3;
 }
 
 #container {
@@ -334,3 +332,4 @@ button:hover {
 
 /* ---------------------------- */
 
+/* a */
