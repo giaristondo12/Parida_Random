@@ -160,11 +160,15 @@ const canviarColor = (color) =>
     message.style.backgroundColor = color;
 }
 
+let body = document.querySelector("body");
+
 const goZonaJoc = () =>
 {
     menu.style.display = "none";
     menuDif.style.display = "none";
     zonaJoc.style.display = "flex";
+
+    body.style.backgroundColor = "#ffefc3";
 }
 
 const goMenuDif = () =>
@@ -173,6 +177,8 @@ const goMenuDif = () =>
     menu.style.display = "none";
     zonaJoc.style.display = "none";
     amagarInput();
+
+    body.style.backgroundColor = "#bb7942";
 }
 
 const goMenu = () =>
@@ -181,6 +187,8 @@ const goMenu = () =>
     menuDif.style.display = "none";
     zonaJoc.style.display = "none";
     reset();
+
+    body.style.backgroundColor = "#93b247";
 }
 
 const setCSS = (files, columnes) =>
